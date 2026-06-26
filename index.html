@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VaultPeer is an open-source, privacy-first KeePass-compatible password manager with live multi-device sync over WebRTC. Your KDBX vault stays encrypted — sync directly between desktop, mobile, and headless nodes.">
+  <meta name="theme-color" content="#0b0f0e">
+  <meta property="og:title" content="VaultPeer — Privacy-first password manager with P2P sync">
+  <meta property="og:description" content="KeePass-compatible KDBX storage. No cloud vault. Sync encrypted databases directly between your devices over WebRTC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mhamzaiqbal1998.github.io/VaultPeer/">
+  <meta property="og:image" content="https://mhamzaiqbal1998.github.io/VaultPeer/assets/android-chrome-512x512.png">
+  <title>VaultPeer — Privacy-first password manager with P2P sync</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-96x96.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/android-chrome-192x192.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <img src="assets/logo.png" srcset="assets/logo@2x.png 2x" alt="" width="40" height="40">
+        VaultPeer
+      </a>
+      <nav class="nav-desktop" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#projects">Projects</a>
+        <a href="#get-started">Get started</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download" class="btn btn-primary btn-sm">Download</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="nav-mobile" aria-label="Mobile">
+      <a href="#features">Features</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#projects">Projects</a>
+      <a href="#get-started">Get started</a>
+      <a href="#faq">FAQ</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge"><span></span> Open source · Apache 2.0 · v1.0</div>
+          <h1>Your passwords.<br><em>Your devices.</em><br>No cloud vault.</h1>
+          <p class="hero-lead">
+            VaultPeer is a KeePass-compatible password manager that stores credentials in standard
+            <code>.kdbx</code> files and syncs them live between your desktop, phone, and always-on
+            server node — directly over WebRTC. Phonebook handles peer discovery only; your decrypted
+            vault never leaves your devices.
+          </p>
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Get VaultPeer</a>
+            <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Desktop" class="btn btn-secondary" rel="noopener">View on GitHub</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <img src="assets/logo.png" alt="VaultPeer">
+              <div>
+                <h2>Live vault sync</h2>
+                <p>Encrypted KDBX · peer-to-peer</p>
+              </div>
+            </div>
+            <div class="sync-flow">
+              <div class="sync-node">
+                <div class="sync-node-icon">📖</div>
+                <div>
+                  <div class="sync-node-label">VaultPeer-Phonebook</div>
+                  <div class="sync-node-role">Signaling server — room join &amp; ICE relay</div>
+                </div>
+              </div>
+              <div class="sync-arrow">↕ signaling only (no vault data)</div>
+              <div class="sync-node">
+                <div class="sync-node-icon">🖥</div>
+                <div>
+                  <div class="sync-node-label">Desktop node</div>
+                  <div class="sync-node-role">Full UI · Windows</div>
+                </div>
+              </div>
+              <div class="sync-node">
+                <div class="sync-node-icon">📱</div>
+                <div>
+                  <div class="sync-node-label">Mobile node</div>
+                  <div class="sync-node-role">Full UI · Android</div>
+                </div>
+              </div>
+              <div class="sync-node">
+                <div class="sync-node-icon">⬡</div>
+                <div>
+                  <div class="sync-node-label">Server node</div>
+                  <div class="sync-node-role">Headless · 24/7 backup peer</div>
+                </div>
+              </div>
+              <div class="sync-arrow">↔ WebRTC data channels (encrypted .kdbx)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">KeePass power. Peer-to-peer sync.</h2>
+        <p class="section-lead">
+          VaultPeer works like KeePassXC on your device, then keeps every node in sync when you want —
+          without handing your vault to a cloud provider.
+        </p>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">🔐</div>
+            <h3>KeePass-compatible KDBX</h3>
+            <p>Open, create, and save standard <code>.kdbx</code> databases with AES-256, ChaCha20, and Argon2 — compatible with KeePassXC and other managers.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <h3>Live multi-device sync</h3>
+            <p>Nodes join a room on Phonebook, discover each other, and exchange the encrypted vault over WebRTC data channels on startup and after local changes.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">☁️</div>
+            <h3>No cloud vault</h3>
+            <p>Your credentials stay on your devices. Phonebook relays connection metadata only — it never sees decrypted vault contents or your master password.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📴</div>
+            <h3>Offline-first</h3>
+            <p>Use your vault without a network connection. Sync runs automatically when peers are available.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔑</div>
+            <h3>Password generator &amp; OTP</h3>
+            <p>Generate strong passwords and passphrases. Scan QR codes or enter secrets for RFC 6238 TOTP one-time passwords.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🛡</div>
+            <h3>No telemetry</h3>
+            <p>No analytics, no crash reporting, no cloud account. Network activity only when you explicitly enable sync.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section-alt">
+      <div class="container">
+        <span class="section-label">Architecture</span>
+        <h2 class="section-title">How VaultPeer sync works</h2>
+        <p class="section-lead">
+          Unlike cloud-first password managers, VaultPeer separates <strong>signaling</strong> from
+          <strong>sync nodes</strong>. Only Phonebook handles WebRTC signaling. Every other component
+          is a peer that holds and syncs the encrypted KDBX file.
+        </p>
+        <div class="arch-diagram" role="img" aria-label="VaultPeer sync architecture diagram">
+<pre>
+┌─────────────────┐     signaling only      ┌──────────────────────┐
+│ VaultPeer       │ ◄──────────────────────►│ VaultPeer-Phonebook  │
+│ nodes           │   (room join, ICE, SDP)   │ (signaling server)   │
+│                 │                         └──────────────────────┘
+│  · Desktop      │
+│  · Mobile       │
+│  · Server node  │──── WebRTC data channels ────► peer-to-peer
+└─────────────────┘      (encrypted .kdbx)            vault sync
+</pre>
+        </div>
+        <div class="arch-note">
+          <strong>Important:</strong> The server node is <em>not</em> the signaling server. It is a
+          headless sync peer with no UI — it keeps the vault file on disk, stays online 24/7 as a
+          backup, and accepts pushes and serves pulls to other nodes. Only
+          <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Phonebook">VaultPeer-Phonebook</a>
+          handles signaling.
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <span class="section-label">Ecosystem</span>
+        <h2 class="section-title">VaultPeer projects</h2>
+        <p class="section-lead">
+          VaultPeer is a family of open-source repositories. Each plays a distinct role in the
+          sync network. All are licensed under Apache 2.0.
+        </p>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card-header">
+              <h3>VaultPeer Desktop</h3>
+              <span class="project-tag">Node · UI</span>
+            </div>
+            <p>Windows desktop client with full vault management — create entries, generate passwords, auto-type, Windows Hello unlock, and browser integration.</p>
+            <div class="project-links">
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Desktop" class="btn btn-secondary btn-sm" rel="noopener">GitHub</a>
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Desktop/releases" class="btn btn-primary btn-sm" rel="noopener">Releases</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-header">
+              <h3>VaultPeer Mobile</h3>
+              <span class="project-tag">Node · UI</span>
+            </div>
+            <p>Android app with biometric unlock, system autofill, local backups, and the same KDBX format and sync protocol as desktop.</p>
+            <div class="project-links">
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Mobile" class="btn btn-secondary btn-sm" rel="noopener">GitHub</a>
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Mobile/releases" class="btn btn-primary btn-sm" rel="noopener">Releases</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-header">
+              <h3>VaultPeer Server Node</h3>
+              <span class="project-tag">Node · Headless</span>
+            </div>
+            <p>Always-on backup peer for VPS, NAS, or home server. No UI — holds the encrypted vault and syncs push/pull with other nodes. Docker-ready.</p>
+            <div class="project-links">
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-ServerNode" class="btn btn-secondary btn-sm" rel="noopener">GitHub</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-header">
+              <h3>VaultPeer Phonebook</h3>
+              <span class="project-tag">Signaling</span>
+            </div>
+            <p>WebRTC signaling server. Nodes join a room, discover peers, and exchange ICE/SDP. Does not store or see vault data. Docker-ready.</p>
+            <div class="project-links">
+              <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Phonebook" class="btn btn-secondary btn-sm" rel="noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="get-started" class="section-alt">
+      <div class="container">
+        <span class="section-label">Get started</span>
+        <h2 class="section-title">Set up your sync network</h2>
+        <p class="section-lead">Four steps to sync your vault across devices.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Deploy Phonebook</h3>
+              <p>Run <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Phonebook">VaultPeer-Phonebook</a> on a server reachable by all your nodes — locally or on the internet. Use Docker for production.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Create or open a vault</h3>
+              <p>Install VaultPeer Desktop or Mobile. Create a new <code>.kdbx</code> database or open an existing KeePass-compatible file.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Configure sync on each node</h3>
+              <p>In Settings → Sync, enter your Phonebook WebSocket URL and a shared room ID. All nodes must use the same room ID and vault filename.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Add a server node (optional)</h3>
+              <p>Deploy <a href="https://github.com/mHamzaIqbal1998/VaultPeer-ServerNode">VaultPeer-ServerNode</a> for a 24/7 headless peer that keeps a backup copy and syncs when desktop or mobile nodes come online.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Common questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">What file format does VaultPeer use?</button>
+            <div class="faq-answer">
+              VaultPeer uses the standard KDBX format (KeePass 2.x compatible). Your database files have the <code>.kdbx</code> extension and can be opened by KeePass 2, KeePassXC, KeePass DX, and VaultPeer on other platforms.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Does VaultPeer connect to the internet by default?</button>
+            <div class="faq-answer">
+              No. VaultPeer makes zero network calls during normal operation. Network activity only occurs when you explicitly enable P2P sync (Phonebook + WebRTC) or optional browser integration on desktop.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">What is the difference between Phonebook and the server node?</button>
+            <div class="faq-answer">
+              <strong>Phonebook</strong> is the WebRTC signaling server — it helps nodes find each other and exchange connection metadata. It never stores your vault. The <strong>server node</strong> is a headless sync peer like desktop and mobile, but without a UI. It holds the encrypted KDBX file on disk and participates in push/pull sync as a 24/7 backup.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Can Phonebook or the server node see my passwords?</button>
+            <div class="faq-answer">
+              No. Only the encrypted KDBX bytes travel over WebRTC. Phonebook relays signaling messages only. The server node stores the encrypted file but never decrypts it — you cannot unlock or edit entries through the server node.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">What happens if two nodes edit the vault at the same time?</button>
+            <div class="faq-answer">
+              VaultPeer uses KeePass-compatible merge rules. Entries are matched by UUID. If the same entry was modified on both sides, the newer revision wins based on last-modified timestamps.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section-alt cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to take control of your passwords?</h2>
+          <p>Download VaultPeer for your platform, deploy Phonebook, and sync your encrypted vault across every device you own.</p>
+          <div class="download-grid">
+            <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Desktop/releases" class="btn btn-primary" rel="noopener">Desktop (Windows)</a>
+            <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Mobile/releases" class="btn btn-primary" rel="noopener">Mobile (Android APK)</a>
+            <a href="https://github.com/mHamzaIqbal1998/VaultPeer-Phonebook" class="btn btn-secondary" rel="noopener">Deploy Phonebook</a>
+            <a href="https://github.com/mHamzaIqbal1998/VaultPeer-ServerNode" class="btn btn-secondary" rel="noopener">Server Node</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand">
+            <img src="assets/logo.png" alt="" width="32" height="32">
+            VaultPeer
+          </a>
+          <p>Open-source, privacy-first password management with KeePass-compatible storage and peer-to-peer sync over WebRTC.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer-Desktop" rel="noopener">Desktop</a></li>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer-Mobile" rel="noopener">Mobile</a></li>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer-ServerNode" rel="noopener">Server Node</a></li>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer-Phonebook" rel="noopener">Phonebook</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer/blob/main/LICENSE" rel="noopener">Apache License 2.0</a></li>
+            <li><a href="https://github.com/mHamzaIqbal1998/VaultPeer" rel="noopener">Source (this site)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VaultPeer contributors</span>
+        <span>Licensed under Apache License 2.0</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
